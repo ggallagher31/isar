@@ -20,6 +20,8 @@ python() {
                              'linux-headers-' + kernel)
 }
 
+ISAR_CROSS_COMPILE = "0"
+
 inherit dpkg-base
 
 SRC_URI += "file://build-kernel.sh"

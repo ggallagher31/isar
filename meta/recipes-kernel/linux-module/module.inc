@@ -15,6 +15,13 @@ SRC_URI += "file://debian/"
 
 AUTOLOAD ?= "0"
 
+# Cross-compilation is not supported for default Debian kernels.
+# For example, package with kernel headers for ARM:
+#   linux-headers-armmp
+# has hard dependencies from linux-compiler-gcc-4.8-arm, what
+# conflicts with the host binaries.
+ISAR_CROSS_COMPILE = "0"
+
 inherit dpkg
 
 dpkg_runbuild_prepend() {
