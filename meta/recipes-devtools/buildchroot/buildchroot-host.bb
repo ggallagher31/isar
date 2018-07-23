@@ -25,7 +25,9 @@ BUILDCHROOT_PREINSTALL ?= "make \
 # repository:
 #     http://emdebian.org/tools/debian/
 BUILDCHROOT_PREINSTALL_append_armhf += "binutils-arm-linux-gnueabihf \
-                                              crossbuild-essential-armhf"
+                                        crossbuild-essential-armhf"
+BUILDCHROOT_PREINSTALL_append_arm64 += "binutils-aarch64-linux-gnu \
+                                        crossbuild-essential-aarch64"
 
 PARAMS = "--host-arch"
 do_build[depends] = "isar-apt:do_cache_config isar-bootstrap-host:do_bootstrap"
