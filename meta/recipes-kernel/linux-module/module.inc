@@ -20,7 +20,7 @@ AUTOLOAD ?= "0"
 #   linux-headers-armmp
 # has hard dependencies from linux-compiler-gcc-4.8-arm, what
 # conflicts with the host binaries.
-ISAR_CROSS_COMPILE = "0"
+ISAR_CROSS_COMPILE = "1"
 
 inherit dpkg
 
